@@ -1,0 +1,4 @@
+*.pdf
+*.html
+*.docx
+!templates/cv.html

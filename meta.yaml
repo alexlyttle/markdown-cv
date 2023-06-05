@@ -1,0 +1,33 @@
+---
+# PERSONAL INFORMATION
+title: Firstname M. Lastname, PhD
+subtitle: Postdoctoral Research Fellow
+author: Firstname Lastname
+date: '2023-06-05'
+location: City, Country
+phone: '+44 1234 567 890'  # be careful sharing this online
+email: local@domain.com  # be careful sharing this online
+website: domain.com
+
+# SUMMARY (optional)
+# abstract-title: Summary
+# abstract: |
+#   Here is a summary of my research interests and experience.
+
+# HTML
+mainfont: Noto Sans
+maxwidth: 44em
+fontsize: 10pt  # Also applies to LaTeX
+
+# LaTeX
+documentclass: cv  # using cv class provided
+geometry: margin=1.5in
+fontfamily: noto
+fontfamilyoptions: sfdefault
+colorlinks: true
+
+# BIBLIOGRAPHY (optional, use --citeproc with pandoc to process)
+# bibliography: publications.bib
+# link-citations: true
+# reference-section-title: Bibliography
+---
