@@ -2,3 +2,4 @@
 *.html
 *.docx
 !templates/cv.html
+!images/*.pdf
