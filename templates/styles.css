@@ -1,21 +1,15 @@
 $if(document-css)$
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html {
-$if(mainfont)$
-  font-family: $mainfont$;
-$endif$
-$if(fontsize)$
-  font-size: $fontsize$;
-$endif$
-$if(linestretch)$
-  line-height: $linestretch$;
-$endif$
+  font-family: $if(mainfont)$$mainfont$$else$'Noto Sans', sans-serif$endif$;
+  font-size: $if(fontsize)$$fontsize$$else$10pt$endif$;
+  line-height: $if(linestretch)$$linestretch$$else$1.2$endif$;
   color: $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
   background-color: $if(backgroundcolor)$$backgroundcolor$$else$#fdfdfd$endif$;
 }
 body {
   margin: 0 auto;
-  max-width: $if(maxwidth)$$maxwidth$$else$36em$endif$;
+  max-width: $if(maxwidth)$$maxwidth$$else$46em$endif$;
   padding-left: $if(margin-left)$$margin-left$$else$50px$endif$;
   padding-right: $if(margin-right)$$margin-right$$else$50px$endif$;
   padding-top: $if(margin-top)$$margin-top$$else$50px$endif$;
@@ -27,21 +21,23 @@ body {
 }
 @media (max-width: 600px) {
   body {
-    font-size: 0.9em;
+    /* font-size: 0.9em; */
     padding: 12px;
   }
   h1 {
+    font-size: 1.6em;
+  }
+  h1.title {
     font-size: 1.8em;
   }
 }
 @media print {
   html {
-    background-color: $if(backgroundcolor)$$backgroundcolor$$else$white$endif$;
+    background-color: white;
   }
   body {
     background-color: transparent;
     color: black;
-    <!-- font-size: 12pt; -->
   }
   p, h2, h3 {
     orphans: 3;
@@ -67,6 +63,21 @@ img.icon {
   height: 1em;
   width: auto;
   vertical-align: middle;
+}
+h1.title {
+  font-size: 2.0em;
+}
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.4em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h4 {
+  font-size: 1.0em;
 }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.4em;
@@ -105,12 +116,11 @@ div.abstract-title {
 }
 $endif$
 code {
-  font-family: $if(monofont)$$monofont$$else$Menlo, Monaco, Consolas, 'Lucida Console', monospace$endif$;
+  font-family: $if(monofont)$$monofont$$else$'Noto Sans Mono', monospace$endif$;
 $if(monobackgroundcolor)$
   background-color: $monobackgroundcolor$;
   padding: .2em .4em;
 $endif$
-  font-size: 85%;
   margin: 0;
   hyphens: manual;
 }
