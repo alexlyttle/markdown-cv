@@ -9,25 +9,66 @@ phone: '+44 1234 567 890'  # be careful sharing this online
 email: local@domain.com  # be careful sharing this online
 website: domain.com
 
-# SUMMARY (optional)
+# SUMMARY (optional; example)
 # abstract-title: Summary
 # abstract: |
 #   Here is a summary of my research interests and experience.
 
-# HTML
-mainfont: Noto Sans
-maxwidth: 44em
-fontsize: 10pt  # Also applies to LaTeX
-
-# LaTeX
-documentclass: cv  # using cv class provided
-geometry: margin=1.5in
-fontfamily: noto
-fontfamilyoptions: sfdefault
-colorlinks: true
-
-# BIBLIOGRAPHY (optional, use --citeproc with pandoc to process)
-# bibliography: publications.bib
+# BIBLIOGRAPHY (optional; example; use --citeproc with pandoc to process)
+# bibliography: citations.bib
 # link-citations: true
 # reference-section-title: Bibliography
+
+# OPTIONS (defaults commented out)
+# fontsize: 10pt
+# linestrethc: 1.2
+
+# HTML (defaults commented out)
+# mainfont: \'Noto Sans\'
+# maxwidth: 46em
+# fontcolor: '#1a1a1a'
+# backgroundcolor: '#fdfdfd'
+# margin-left: 50px
+# margin-right: 50px
+# margin-top: 50px
+# margin-bottom: 50px
+# linkcolor: '#1a1a1a'
+# monofont: \'Noto Sans Mono\', monospace
+
+# LaTeX (defaults commented out)
+# classoption:
+# geometry: 
+#   - margin=3cm
+# colorlinks:
+# linkcolor: Blue
+# filecolor: Blue
+# citecolor: Blue
+# urlcolor: Blue
+# fontfamily: noto
+# fontfamilyoptions: sfdefault
+# fontenc: T1
+# secnumdepth: 5
+# pagestyle: fancy
+# hyperrefoptions:
+# indent:           # indent paragraphs instead of vertical space
+# block-headings:
+
+# XeTeX/LuaTeX (defaults commented out)
+# mainfont:
+# sansfont:
+# monofont:
+# mathfont:
+# mainfontoptions:
+# sansfontoptions:
+# monofontoptions:
+# mathfontoptions:
+# mathspec:
+# fontfamilies:
+#   - name:
+#     font:
+#     options:
+# CJKmainfont:
+# CJKsansfont:
+# CJKmonofont:
+# CJKoptions:
 ---
