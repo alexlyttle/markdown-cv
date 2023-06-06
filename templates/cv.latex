@@ -9,21 +9,17 @@ $if(CJKmainfont)$
 $endif$
 %
 \documentclass[
-$if(fontsize)$
-  $fontsize$,
-$endif$
+$if(fontsize)$$fontsize$$else$10pt$endif$,
 $if(papersize)$
   $papersize$paper,
 $endif$
 $for(classoption)$
   $classoption$$sep$,
 $endfor$
-]{$documentclass$}
+]{article}
 
 \usepackage{amsmath,amssymb}
-$if(linestretch)$
 \usepackage{setspace}
-$endif$
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
@@ -44,11 +40,11 @@ $endif$
 \fi
 $if(fontfamily)$
 $else$
-$-- Set default font before Beamer theme so the theme can override it
-\usepackage{lmodern}
+$-- Set default font
+\usepackage[sfdefault]{noto}
 $endif$
 
-$-- User font settings (must come after default font and Beamer theme)
+$-- User font settings
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $endif$
@@ -143,9 +139,15 @@ $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 $endif$
 \usepackage{xcolor}
-$if(geometry)$
-\usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
-$endif$
+
+\usepackage[%
+  $if(geometry)$
+  $for(geometry)$$geometry$$sep$,$endfor$
+  $else$
+  margin=3cm,
+  $endif$
+]{geometry}
+
 $if(listings)$
 \usepackage{listings}
 \newcommand{\passthrough}[1]{#1}
@@ -173,8 +175,8 @@ $endif$
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
 $endif$
-$if(graphics)$
 \usepackage{graphicx}
+$if(graphics)$
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -222,9 +224,9 @@ $if(block-headings)$
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 $endif$
-$if(pagestyle)$
-\pagestyle{$pagestyle$}
-$endif$
+\usepackage{fancyhdr}
+\pagestyle{$if(pagestyle)$$pagestyle$$else$fancy$endif$}
+
 $if(csl-refs)$
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
@@ -334,8 +336,8 @@ $if(keywords)$
 $endif$
 $if(colorlinks)$
   colorlinks=true,
-  linkcolor={$if(linkcolor)$$linkcolor$$else$Maroon$endif$},
-  filecolor={$if(filecolor)$$filecolor$$else$Maroon$endif$},
+  linkcolor={$if(linkcolor)$$linkcolor$$else$Blue$endif$},
+  filecolor={$if(filecolor)$$filecolor$$else$Blue$endif$},
   citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
   urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
 $else$
@@ -350,32 +352,80 @@ $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{$subtitle$}
+\newcommand{\subtitle}{$subtitle$}
 $endif$
 \author{$author$}
 \date{$date$}
 
-% Additional options for CV class
+%% COMMANDS
+\usepackage{graphicx,graphbox}
+\graphicspath{{./images/}}
 $if(location)$
-\location{$location$}
-$endif$
-$if(email)$
-\email{$email$}
+\newcommand{\location}[1]{%
+  \includegraphics[align=c,height=1em]{location.pdf} $location$}
 $endif$
 $if(phone)$
-\phone{$phone$}
+\newcommand{\phone}[1]{%
+  \href{tel:#1}{\includegraphics[align=c,height=1em]{call.pdf} $phone$}}
+$endif$
+$if(email)$
+\newcommand{\email}[1]{%
+  \href{mailto:#1}{\includegraphics[align=c,height=1em]{mail.pdf} $email$}}
 $endif$
 $if(website)$
-\website{$website$}
+\newcommand{\website}[1]{%
+  \href{https://#1}{\includegraphics[align=c,height=1em]{home.pdf} $website$}}
 $endif$
 
+%% TITLE
+\makeatletter
+\renewcommand*{\maketitle}{%
+  \thispagestyle{empty}
+  \vskip 2em
+  \begin{center}
+    {\LARGE\bfseries \@title \par\vskip 0.3em}%
+    \ifdefined\subtitle
+    {\normalsize \subtitle \par}%
+    \fi
+    \normalsize
+    \ifdefined\location
+      \location\par
+    \fi
+
+    \ifdefined\phone
+      \phone~
+    \fi
+    \ifdefined\email
+      \email~
+    \fi
+    \ifdefined\website
+      \website~
+    \fi
+  \end{center}
+  \par\vskip 1em
+}
+\makeatother
+
+%% HEADER AND FOOTER
+\makeatletter
+\fancyhead{} % clear all header fields
+\fancyhead[L]{%
+  \ifdefined\@author
+    \@author~
+  \fi
+  \ifdefined\phone
+    \phone~
+  \fi
+  \ifdefined\email
+    \email~
+  \fi}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[R]{\small Page \thepage}
+\makeatother
+
 \begin{document}
+\setstretch{$if(linestretch)$$linestretch$$else$1.2$endif$}
+
 $if(has-frontmatter)$
 \frontmatter
 $endif$
@@ -409,9 +459,6 @@ $endif$
 }
 $endif$
 
-$if(linestretch)$
-\setstretch{$linestretch$}
-$endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
