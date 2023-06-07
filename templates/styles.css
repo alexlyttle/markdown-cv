@@ -1,20 +1,19 @@
 $if(document-css)$
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html {
-  font-family: $if(mainfont)$$mainfont$$else$'Noto Sans', sans-serif$endif$;
-  font-size: $if(fontsize)$$fontsize$$else$10pt$endif$;
+  font-family: $if(html.mainfont)$$html.mainfont$$else$'Noto Sans', sans-serif$endif$;
+  font-size: $if(html.fontsize)$$html.fontsize$$else$12pt$endif$;
   /* line-height: $if(linestretch)$$linestretch$$else$1.2$endif$; */
-  color: $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
-  background-color: $if(backgroundcolor)$$backgroundcolor$$else$#fdfdfd$endif$;
+  color: $if(html.fontcolor)$$html.fontcolor$$else$#1a1a1a$endif$;
+  background-color: $if(html.backgroundcolor)$$html.backgroundcolor$$else$#fdfdfd$endif$;
 }
 body {
-  font-size: 120%; /* Scale all font sizes in body */
   margin: 0 auto;
-  max-width: $if(maxwidth)$$maxwidth$$else$45em$endif$;
-  padding-left: $if(margin-left)$$margin-left$$else$50px$endif$;
-  padding-right: $if(margin-right)$$margin-right$$else$50px$endif$;
-  padding-top: $if(margin-top)$$margin-top$$else$50px$endif$;
-  padding-bottom: $if(margin-bottom)$$margin-bottom$$else$50px$endif$;
+  max-width: $if(html.maxwidth)$$html.maxwidth$$else$45em$endif$;
+  padding-left: $if(html.margin-left)$$html.margin-left$$else$50px$endif$;
+  padding-right: $if(html.margin-right)$$html.margin-right$$else$50px$endif$;
+  padding-top: $if(html.margin-top)$$html.margin-top$$else$50px$endif$;
+  padding-bottom: $if(html.margin-bottom)$$html.margin-bottom$$else$50px$endif$;
   hyphens: auto;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
@@ -37,7 +36,6 @@ body {
     line-height: 1.0;
   }
   body {
-    font-size: 100%;  /* Rescale font size to be chosen size */
     background-color: transparent;
     color: black;
   }
@@ -53,10 +51,10 @@ p {
   margin: 1em 0;
 }
 a {
-  color: $if(linkcolor)$$linkcolor$$else$#1a1a1a$endif$;
+  color: $if(html.linkcolor)$$html.linkcolor$$else$#1a1a1a$endif$;
 }
 a:visited {
-  color: $if(linkcolor)$$linkcolor$$else$#1a1a1a$endif$;
+  color: $if(html.linkcolor)$$html.linkcolor$$else$#1a1a1a$endif$;
 }
 img {
   max-width: 100%;
@@ -118,9 +116,9 @@ div.abstract-title {
 }
 $endif$
 code {
-  font-family: $if(monofont)$$monofont$$else$'Noto Sans Mono', monospace$endif$;
-$if(monobackgroundcolor)$
-  background-color: $monobackgroundcolor$;
+  font-family: $if(html.monofont)$$html.monofont$$else$'Noto Sans Mono', monospace$endif$;
+$if(html.monobackgroundcolor)$
+  background-color: $html.monobackgroundcolor$;
   padding: .2em .4em;
 $endif$
   margin: 0;
@@ -128,8 +126,8 @@ $endif$
 }
 pre {
   margin: 1em 0;
-$if(monobackgroundcolor)$
-  background-color: $monobackgroundcolor$;
+$if(html.monobackgroundcolor)$
+  background-color: $html.monobackgroundcolor$;
   padding: 1em;
 $endif$
   overflow: auto;
@@ -162,11 +160,11 @@ table caption {
 }
 tbody {
   margin-top: 0.5em;
-  border-top: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
-  border-bottom: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
+  border-top: 1px solid $if(html.fontcolor)$$html.fontcolor$$else$#1a1a1a$endif$;
+  border-bottom: 1px solid $if(html.fontcolor)$$html.fontcolor$$else$#1a1a1a$endif$;
 }
 th {
-  border-top: 1px solid $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
+  border-top: 1px solid $if(html.fontcolor)$$html.fontcolor$$else$#1a1a1a$endif$;
   padding: 0.25em 0.5em 0.25em 0.5em;
 }
 td {

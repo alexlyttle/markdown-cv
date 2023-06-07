@@ -23,46 +23,49 @@ website: domain.com
 # fontsize: 10pt                       # size for print version, this is scaled by 120% in HTML
 
 # HTML (defaults commented out)
-# mainfont: \'Noto Sans\', sans-serif
-# maxwidth: 45em                       # max width of body text
-# fontcolor: '#1a1a1a'
-# backgroundcolor: '#fdfdfd'
-# margin-left: 50px
-# margin-right: 50px
-# margin-top: 50px
-# margin-bottom: 50px
-# linkcolor: '#1a1a1a'
-# monofont: \'Noto Sans Mono\', monospace
-# monobackgroundcolor:
-# document-css:
+# html:
+#   fontsize: 12pt
+#   mainfont: \'Noto Sans\', sans-serif
+#   maxwidth: 45em                       # max width of body text
+#   fontcolor: '#1a1a1a'
+#   backgroundcolor: '#fdfdfd'
+#   linkcolor: '#1a1a1a'
+#   margin-left: 50px
+#   margin-right: 50px
+#   margin-top: 50px
+#   margin-bottom: 50px
+#   monofont: \'Noto Sans Mono\', monospace
+#   monobackgroundcolor:
 
 # LaTeX (defaults commented out)
-# classoptions:
-# geometryoptions: 
-#   - margin=3cm
-# hyperrefoptions:
-# colorlinks:
-# boxlinks:
-# linkcolor: Blue
-# filecolor: Blue
-# citecolor: Blue
-# urlcolor: Blue
-# toccolor:
-# links-as-notes:
-# urlstyle:
-# fontfamily: noto
-# fontfamilyoptions: sfdefault
-# fontenc: T1
-# secnumdepth: 5                       # depth of numbering if numbering sections
-# pagestyle: fancy
-# indent:                              # indent paragraphs instead of vertical space
-# block-headings:
-# microtypeoptions:
-# babelfonts:
-# thanks:
-# biblatexoptions:
-# natbiboptions:
-# biblio-style:
+# latex:
+#   fontsize: 10pt
+#   classoptions:
+#   geometryoptions: 
+#     - margin=3cm
+#   hyperrefoptions:
+#   colorlinks:
+#   boxlinks:
+#   linkcolor: blue
+#   filecolor: blue
+#   citecolor: blue
+#   urlcolor: blue
+#   toccolor:
+#   links-as-notes:
+#   urlstyle:
+#   fontfamily: noto
+#   fontfamilyoptions: sfdefault
+#   fontenc: T1
+#   secnumdepth: 5                       # depth of numbering if numbering sections
+#   pagestyle: fancy
+#   indent:                              # indent paragraphs instead of vertical space
+#   block-headings:
+#   microtypeoptions:
+#   babelfonts:
+#   thanks:
+#   biblatexoptions:
+#   natbiboptions:
+#   biblio-style:
 
 # XeTeX/LuaTeX (defaults commented out)
 # mainfont:
