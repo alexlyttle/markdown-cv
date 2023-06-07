@@ -8,6 +8,7 @@ html {
   background-color: $if(backgroundcolor)$$backgroundcolor$$else$#fdfdfd$endif$;
 }
 body {
+  font-size: 120%; /* Scale all font sizes in body */
   margin: 0 auto;
   max-width: $if(maxwidth)$$maxwidth$$else$46em$endif$;
   padding-left: $if(margin-left)$$margin-left$$else$50px$endif$;
@@ -21,7 +22,6 @@ body {
 }
 @media (max-width: 600px) {
   body {
-    /* font-size: 0.9em; */
     padding: 12px;
   }
   h1 {
@@ -36,6 +36,7 @@ body {
     background-color: white;
   }
   body {
+    font-size: 100%;  /* Rescale font size to be chosen size */
     background-color: transparent;
     color: black;
   }
