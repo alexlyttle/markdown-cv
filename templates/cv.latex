@@ -1,20 +1,18 @@
 % Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{unicode$for(latex.hyperrefoptions)$,$latex.hyperrefoptions$$endfor$}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-$if(colorlinks)$
+$if(latex.colorlinks)$
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 $endif$
-$if(CJKmainfont)$
+$if(latex.CJKmainfont)$
 \PassOptionsToPackage{space}{xeCJK}
 $endif$
 %
 \documentclass[
-$if(fontsize)$$fontsize$$else$10pt$endif$,
-$if(papersize)$
-  $papersize$paper,
-$endif$
-$for(classoptions)$
-  $classoptions$$sep$,
+$if(latex.fontsize)$$latex.fontsize$$else$10pt$endif$,
+$if(latex.papersize)$$latex.papersize$$else$a4$endif$paper,
+$for(latex.classoptions)$
+  $latex.classoptions$$sep$,
 $endfor$
 ]{article}
 
@@ -22,13 +20,13 @@ $endfor$
 \usepackage{setspace}
 \usepackage{iftex}
 \ifPDFTeX
-  \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
+  \usepackage[$if(latex.fontenc)$$latex.fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-$if(mathspec)$
+$if(latex.mathspec)$
   \ifXeTeX
-    \usepackage{mathspec} % this also loads fontspec
+    \usepackage{latex.mathspec} % this also loads fontspec
   \else
     \usepackage{unicode-math} % this also loads fontspec
   \fi
@@ -38,50 +36,50 @@ $endif$
   \defaultfontfeatures{Scale=MatchLowercase}$-- must come before Beamer theme
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-$if(fontfamily)$
+$if(latex.fontfamily)$
 $else$
 $-- Set default font
 \usepackage[sfdefault]{noto}
 $endif$
 
 $-- User font settings
-$if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$if(latex.fontfamily)$
+\usepackage[$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$]{$latex.fontfamily$}
 $endif$
 \ifPDFTeX\else
   % xetex/luatex font selection
-$if(mainfont)$
-  \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+$if(latex.mainfont)$
+  \setmainfont[$for(latex.mainfontoptions)$$latex.mainfontoptions$$sep$,$endfor$]{$latex.mainfont$}
 $endif$
-$if(sansfont)$
-  \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+$if(latex.sansfont)$
+  \setsansfont[$for(latex.sansfontoptions)$$latex.sansfontoptions$$sep$,$endfor$]{$latex.sansfont$}
 $endif$
-$if(monofont)$
-  \setmonofont[$for(monofontoptions)$$monofontoptions$$sep$,$endfor$]{$monofont$}
+$if(latex.monofont)$
+  \setmonofont[$for(latex.monofontoptions)$$latex.monofontoptions$$sep$,$endfor$]{$latex.monofont$}
 $endif$
-$for(fontfamilies)$
-  \newfontfamily{$fontfamilies.name$}[$for(fontfamilies.options)$$fontfamilies.options$$sep$,$endfor$]{$fontfamilies.font$}
+$for(latex.fontfamilies)$
+  \newfontfamily{$latex.fontfamilies.name$}[$for(latex.fontfamilies.options)$$latex.fontfamilies.options$$sep$,$endfor$]{$latex.fontfamilies.font$}
 $endfor$
-$if(mathfont)$
-$if(mathspec)$
+$if(latex.mathfont)$
+$if(latex.mathspec)$
   \ifXeTeX
-    \setmathfont(Digits,Latin,Greek)[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+    \setmathfont(Digits,Latin,Greek)[$for(latex.mathfontoptions)$$latex.mathfontoptions$$sep$,$endfor$]{$latex.mathfont$}
   \else
-    \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+    \setmathfont[$for(latex.mathfontoptions)$$latex.mathfontoptions$$sep$,$endfor$]{$latex.mathfont$}
   \fi
 $else$
-  \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+  \setmathfont[$for(latex.mathfontoptions)$$latex.mathfontoptions$$sep$,$endfor$]{$latex.mathfont$}
 $endif$
 $endif$
-$if(CJKmainfont)$
+$if(latex.CJKmainfont)$
   \ifXeTeX
     \usepackage{xeCJK}
-    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
-    $if(CJKsansfont)$
-      \setCJKsansfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKsansfont$}
+    \setCJKmainfont[$for(latex.CJKoptions)$$latex.CJKoptions$$sep$,$endfor$]{$latex.CJKmainfont$}
+    $if(latex.CJKsansfont)$
+      \setCJKsansfont[$for(latex.CJKoptions)$$latex.CJKoptions$$sep$,$endfor$]{$latex.CJKsansfont$}
     $endif$
-    $if(CJKmonofont)$
-      \setCJKmonofont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmonofont$}
+    $if(latex.CJKmonofont)$
+      \setCJKmonofont[$for(latex.CJKoptions)$$latex.CJKoptions$$sep$,$endfor$]{$latex.CJKmonofont$}
     $endif$
   \fi
 $endif$
@@ -90,10 +88,10 @@ $if(luatexjapresetoptions)$
     \usepackage[$for(luatexjapresetoptions)$$luatexjapresetoptions$$sep$,$endfor$]{luatexja-preset}
   \fi
 $endif$
-$if(CJKmainfont)$
+$if(latex.CJKmainfont)$
   \ifLuaTeX
     \usepackage[$for(luatexjafontspecoptions)$$luatexjafontspecoptions$$sep$,$endfor$]{luatexja-fontspec}
-    \setmainjfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+    \setmainjfont[$for(latex.CJKoptions)$$latex.CJKoptions$$sep$,$endfor$]{$latex.CJKmainfont$}
   \fi
 $endif$
 \fi
@@ -119,10 +117,10 @@ $endif$
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
+  \usepackage[$for(latex.microtypeoptions)$$latex.microtypeoptions$$sep$,$endfor$]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-$if(indent)$
+$if(latex.indent)$
 $else$
 \makeatletter
 \@ifundefined{KOMAClassName}{% if non-KOMA class
@@ -139,10 +137,11 @@ $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 $endif$
 \usepackage{xcolor}
+% \definecolor{linkcolor}{}{}
 
 \usepackage[%
-  $if(geometryoptions)$
-  $for(geometryoptions)$$geometryoptions$$sep$,$endfor$
+  $if(latex.geometryoptions)$
+  $for(latex.geometryoptions)$$latex.geometryoptions$$sep$,$endfor$
   $else$
   margin=3cm,
   $endif$
@@ -206,14 +205,14 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 $if(numbersections)$
-\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+\setcounter{secnumdepth}{$if(latex.secnumdepth)$$latex.secnumdepth$$else$5$endif$}
 $else$
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 $endif$
 $if(subfigure)$
 \usepackage{subcaption}
 $endif$
-$if(block-headings)$
+$if(latex.block-headings)$
 % Make \paragraph and \subparagraph free-standing
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
@@ -225,7 +224,7 @@ $if(block-headings)$
 \fi
 $endif$
 \usepackage{fancyhdr}
-\pagestyle{$if(pagestyle)$$pagestyle$$else$fancy$endif$}
+\pagestyle{$if(latex.pagestyle)$$latex.pagestyle$$else$fancy$endif$}
 
 $if(csl-refs)$
 \newlength{\cslhangindent}
@@ -260,18 +259,18 @@ $if(lang)$
 \fi
 $if(babel-lang)$
 \babelprovide[main,import]{$babel-lang$}
-$if(mainfont)$
+$if(latex.mainfont)$
 \ifPDFTeX
 \else
-\babelfont[$babel-lang$]{rm}[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+\babelfont[$babel-lang$]{rm}[$for(latex.mainfontoptions)$$latex.mainfontoptions$$sep$,$endfor$]{$mainfont$}
 \fi
 $endif$
 $endif$
 $for(babel-otherlangs)$
 \babelprovide[import]{$babel-otherlangs$}
 $endfor$
-$for(babelfonts/pairs)$
-\babelfont[$babelfonts.key$]{rm}{$babelfonts.value$}
+$for(latex.babelfonts/pairs)$
+\babelfont[$latex.babelfonts.key$]{rm}{$latex.babelfonts.value$}
 $endfor$
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
@@ -293,11 +292,11 @@ $if(dir)$
 \fi
 $endif$
 $if(natbib)$
-\usepackage[$natbiboptions$]{natbib}
-\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+\usepackage[$latex.natbiboptions$]{natbib}
+\bibliographystyle{$if(latex.biblio-style)$$latex.biblio-style$$else$plainnat$endif$}
 $endif$
 $if(biblatex)$
-\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
+\usepackage[$if(latex.biblio-style)$style=$latex.biblio-style$,$endif$$for(latex.blatexoptions)$$latex.biblatexoptions$$sep$,$endfor$]{biblatex}
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -310,8 +309,8 @@ $if(csquotes)$
 $endif$
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{$if(urlstyle)$$urlstyle$$else$same$endif$}
-$if(links-as-notes)$
+\urlstyle{$if(latex.urlstyle)$$latex.urlstyle$$else$same$endif$}
+$if(latex.links-as-notes)$
 % Make links footnotes instead of hotlinks:
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 $endif$
@@ -334,14 +333,14 @@ $endif$
 $if(keywords)$
   pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
 $endif$
-$if(colorlinks)$
+$if(latex.colorlinks)$
   colorlinks=true,
-  linkcolor={$if(linkcolor)$$linkcolor$$else$Blue$endif$},
-  filecolor={$if(filecolor)$$filecolor$$else$Blue$endif$},
-  citecolor={$if(citecolor)$$citecolor$$else$Blue$endif$},
-  urlcolor={$if(urlcolor)$$urlcolor$$else$Blue$endif$},
+  linkcolor={$if(latex.linkcolor)$$latex.linkcolor$$else$blue$endif$},
+  filecolor={$if(latex.filecolor)$$latex.filecolor$$else$blue$endif$},
+  citecolor={$if(latex.citecolor)$$latex.citecolor$$else$blue$endif$},
+  urlcolor={$if(latex.urlcolor)$$latex.urlcolor$$else$blue$endif$},
 $else$
-$if(boxlinks)$
+$if(latex.boxlinks)$
 $else$
   hidelinks,
 $endif$
@@ -349,7 +348,7 @@ $endif$
   pdfcreator={LaTeX via pandoc}}
 
 $if(title)$
-\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+\title{$title$}
 $endif$
 $if(subtitle)$
 \newcommand{\subtitle}{$subtitle$}
@@ -451,8 +450,8 @@ $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
 $endif$
 {
-$if(colorlinks)$
-\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
+$if(latex.colorlinks)$
+\hypersetup{linkcolor=$if(latex.toccolor)$$latex.toccolor$$else$$endif$}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents

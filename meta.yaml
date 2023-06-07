@@ -29,7 +29,7 @@ website: domain.com
 #   maxwidth: 45em                       # max width of body text
 #   fontcolor: '#1a1a1a'
 #   backgroundcolor: '#fdfdfd'
-#   linkcolor: '#1a1a1a'
+#   linkcolor: '#0000ff'
 #   margin-left: 50px
 #   margin-right: 50px
 #   margin-top: 50px
@@ -40,49 +40,49 @@ website: domain.com
 # LaTeX (defaults commented out)
 # latex:
 #   fontsize: 10pt
+#   fontfamily: noto
+#   fontfamilyoptions: sfdefault
+#   fontenc: T1
+#   babelfonts:
+#   papersize: a4
 #   classoptions:
 #   geometryoptions: 
 #     - margin=3cm
-#   hyperrefoptions:
+#   pagestyle: fancy
+#   secnumdepth: 5                       # depth of numbering if numbering sections
+#   boxlinks: 
 #   colorlinks:
-#   boxlinks:
 #   linkcolor: blue
 #   filecolor: blue
 #   citecolor: blue
 #   urlcolor: blue
 #   toccolor:
-#   links-as-notes:
+#   links-as-notes:                      # links in footnotes, doesn't work currently
 #   urlstyle:
-#   fontfamily: noto
-#   fontfamilyoptions: sfdefault
-#   fontenc: T1
-#   secnumdepth: 5                       # depth of numbering if numbering sections
-#   pagestyle: fancy
+#   hyperrefoptions:
 #   indent:                              # indent paragraphs instead of vertical space
 #   block-headings:
-#   microtypeoptions:
-#   babelfonts:
-#   thanks:
 #   biblatexoptions:
 #   natbiboptions:
 #   biblio-style:
+#   microtypeoptions:
 
-# XeTeX/LuaTeX (defaults commented out)
-# mainfont:
-# sansfont:
-# monofont:
-# mathfont:
-# mainfontoptions:
-# sansfontoptions:
-# monofontoptions:
-# mathfontoptions:
-# fontfamilies:
-#   - name:
-#     options:
-#     font:
-# CJKmainfont:
-# CJKsansfont:
-# CJKmonofont:
-# CJKoptions:
-# mathspec:
+  # XeTeX/LuaTeX specific (defaults commented out)
+  # mainfont:
+  # sansfont:
+  # monofont:
+  # mathfont:
+  # mainfontoptions:
+  # sansfontoptions:
+  # monofontoptions:
+  # mathfontoptions:
+  # fontfamilies:
+  #   - name:
+  #     options:
+  #     font:
+  # CJKmainfont:
+  # CJKsansfont:
+  # CJKmonofont:
+  # CJKoptions:
+  # mathspec:
 ---
