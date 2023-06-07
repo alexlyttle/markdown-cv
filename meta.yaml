@@ -21,11 +21,10 @@ website: domain.com
 
 # OPTIONS (defaults commented out)
 # fontsize: 10pt                       # size for print version, this is scaled by 120% in HTML
-# linestretch: 1.2                     # line spacing as a fraction of line height
 
 # HTML (defaults commented out)
 # mainfont: \'Noto Sans\', sans-serif
-# maxwidth: 46em                       # max width of body text
+# maxwidth: 45em                       # max width of body text
 # fontcolor: '#1a1a1a'
 # backgroundcolor: '#fdfdfd'
 # margin-left: 50px

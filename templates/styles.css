@@ -3,14 +3,14 @@ $if(document-css)$
 html {
   font-family: $if(mainfont)$$mainfont$$else$'Noto Sans', sans-serif$endif$;
   font-size: $if(fontsize)$$fontsize$$else$10pt$endif$;
-  line-height: $if(linestretch)$$linestretch$$else$1.2$endif$;
+  /* line-height: $if(linestretch)$$linestretch$$else$1.2$endif$; */
   color: $if(fontcolor)$$fontcolor$$else$#1a1a1a$endif$;
   background-color: $if(backgroundcolor)$$backgroundcolor$$else$#fdfdfd$endif$;
 }
 body {
   font-size: 120%; /* Scale all font sizes in body */
   margin: 0 auto;
-  max-width: $if(maxwidth)$$maxwidth$$else$46em$endif$;
+  max-width: $if(maxwidth)$$maxwidth$$else$45em$endif$;
   padding-left: $if(margin-left)$$margin-left$$else$50px$endif$;
   padding-right: $if(margin-right)$$margin-right$$else$50px$endif$;
   padding-top: $if(margin-top)$$margin-top$$else$50px$endif$;
@@ -34,6 +34,7 @@ body {
 @media print {
   html {
     background-color: white;
+    line-height: 1.0;
   }
   body {
     font-size: 100%;  /* Rescale font size to be chosen size */

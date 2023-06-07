@@ -424,7 +424,7 @@ $endif$
 \makeatother
 
 \begin{document}
-\setstretch{$if(linestretch)$$linestretch$$else$1.2$endif$}
+% \setstretch{$if(linestretch)$$linestretch$$else$1.2$endif$}
 
 $if(has-frontmatter)$
 \frontmatter
