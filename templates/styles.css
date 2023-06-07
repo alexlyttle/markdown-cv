@@ -51,10 +51,10 @@ p {
   margin: 1em 0;
 }
 a {
-  color: $if(html.linkcolor)$$html.linkcolor$$else$#1a1a1a$endif$;
+  color: $if(html.linkcolor)$$html.linkcolor$$else$#0000ff$endif$;
 }
 a:visited {
-  color: $if(html.linkcolor)$$html.linkcolor$$else$#1a1a1a$endif$;
+  color: $if(html.linkcolor)$$html.linkcolor$$else$#0000ff$endif$;
 }
 img {
   max-width: 100%;
