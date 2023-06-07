@@ -13,8 +13,8 @@ $if(fontsize)$$fontsize$$else$10pt$endif$,
 $if(papersize)$
   $papersize$paper,
 $endif$
-$for(classoption)$
-  $classoption$$sep$,
+$for(classoptions)$
+  $classoptions$$sep$,
 $endfor$
 ]{article}
 
@@ -141,8 +141,8 @@ $endif$
 \usepackage{xcolor}
 
 \usepackage[%
-  $if(geometry)$
-  $for(geometry)$$geometry$$sep$,$endfor$
+  $if(geometryoptions)$
+  $for(geometryoptions)$$geometryoptions$$sep$,$endfor$
   $else$
   margin=3cm,
   $endif$

@@ -20,12 +20,12 @@ website: domain.com
 # reference-section-title: Bibliography
 
 # OPTIONS (defaults commented out)
-# fontsize: 10pt
-# linestrethc: 1.2
+# fontsize: 10pt                       # size for print version, this is scaled by 120% in HTML
+# linestretch: 1.2                     # line spacing as a fraction of line height
 
 # HTML (defaults commented out)
-# mainfont: \'Noto Sans\'
-# maxwidth: 46em
+# mainfont: \'Noto Sans\', sans-serif
+# maxwidth: 46em                       # max width of body text
 # fontcolor: '#1a1a1a'
 # backgroundcolor: '#fdfdfd'
 # margin-left: 50px
@@ -34,24 +34,36 @@ website: domain.com
 # margin-bottom: 50px
 # linkcolor: '#1a1a1a'
 # monofont: \'Noto Sans Mono\', monospace
+# monobackgroundcolor:
+# document-css:
 
 # LaTeX (defaults commented out)
-# classoption:
-# geometry: 
+# classoptions:
+# geometryoptions: 
 #   - margin=3cm
+# hyperrefoptions:
 # colorlinks:
+# boxlinks:
 # linkcolor: Blue
 # filecolor: Blue
 # citecolor: Blue
 # urlcolor: Blue
+# toccolor:
+# links-as-notes:
+# urlstyle:
 # fontfamily: noto
 # fontfamilyoptions: sfdefault
 # fontenc: T1
-# secnumdepth: 5
+# secnumdepth: 5                       # depth of numbering if numbering sections
 # pagestyle: fancy
-# hyperrefoptions:
-# indent:           # indent paragraphs instead of vertical space
+# indent:                              # indent paragraphs instead of vertical space
 # block-headings:
+# microtypeoptions:
+# babelfonts:
+# thanks:
+# biblatexoptions:
+# natbiboptions:
+# biblio-style:
 
 # XeTeX/LuaTeX (defaults commented out)
 # mainfont:
@@ -62,13 +74,13 @@ website: domain.com
 # sansfontoptions:
 # monofontoptions:
 # mathfontoptions:
-# mathspec:
 # fontfamilies:
 #   - name:
-#     font:
 #     options:
+#     font:
 # CJKmainfont:
 # CJKsansfont:
 # CJKmonofont:
 # CJKoptions:
+# mathspec:
 ---
