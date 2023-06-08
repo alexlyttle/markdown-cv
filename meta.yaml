@@ -9,12 +9,12 @@ phone: '+44 1234 567 890'  # be careful sharing this online
 email: local@domain.com  # be careful sharing this online
 website: domain.com
 
-# SUMMARY (optional; example)
+# SUMMARY (example)
 # abstract-title: Summary
 # abstract: |
 #   Here is a summary of my research interests and experience.
 
-# BIBLIOGRAPHY (optional; example; use --citeproc with pandoc to process)
+# BIBLIOGRAPHY (example; use --citeproc with pandoc to process citations)
 # bibliography: citations.bib
 # link-citations: true
 # reference-section-title: Bibliography

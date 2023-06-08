@@ -119,7 +119,7 @@ code {
   font-family: $if(html.monofont)$$html.monofont$$else$'Noto Sans Mono', monospace$endif$;
 $if(html.monobackgroundcolor)$
   background-color: $html.monobackgroundcolor$;
-  padding: .2em .4em;
+  padding: .1em .3em;
 $endif$
   margin: 0;
   hyphens: manual;
