@@ -1,9 +1,6 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode$for(latex.hyperrefoptions)$,$latex.hyperrefoptions$$endfor$}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-$if(latex.colorlinks)$
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-$endif$
 $if(latex.CJKmainfont)$
 \PassOptionsToPackage{space}{xeCJK}
 $endif$
@@ -136,8 +133,12 @@ $endif$
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 $endif$
-\usepackage{xcolor}
-% \definecolor{linkcolor}{}{}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+$if(latex.linkcolor)$
+\definecolor{linkcolor}{$latex.linkcolor.model$}{$latex.linkcolor.spec$}
+$else$
+\definecolor{linkcolor}{named}{Blue}
+$endif$
 
 \usepackage[%
   $if(latex.geometryoptions)$
@@ -333,17 +334,14 @@ $endif$
 $if(keywords)$
   pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
 $endif$
-$if(latex.colorlinks)$
-  colorlinks=true,
-  linkcolor={$if(latex.linkcolor)$$latex.linkcolor$$else$blue$endif$},
-  filecolor={$if(latex.filecolor)$$latex.filecolor$$else$blue$endif$},
-  citecolor={$if(latex.citecolor)$$latex.citecolor$$else$blue$endif$},
-  urlcolor={$if(latex.urlcolor)$$latex.urlcolor$$else$blue$endif$},
-$else$
-$if(latex.boxlinks)$
-$else$
+$if(latex.hidelinks)$
   hidelinks,
-$endif$
+$else$
+  colorlinks,
+  linkcolor=linkcolor,
+  filecolor=linkcolor,
+  citecolor=linkcolor,
+  urlcolor=linkcolor,
 $endif$
   pdfcreator={LaTeX via pandoc}}
 
@@ -450,8 +448,9 @@ $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
 $endif$
 {
-$if(latex.colorlinks)$
-\hypersetup{linkcolor=$if(latex.toccolor)$$latex.toccolor$$else$$endif$}
+$if(latex.hidelinks)$
+$else$
+\hypersetup{linkcolor=linkcolor}
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents

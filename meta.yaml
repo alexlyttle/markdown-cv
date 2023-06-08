@@ -19,53 +19,47 @@ website: domain.com
 # link-citations: true
 # reference-section-title: Bibliography
 
-# OPTIONS (defaults commented out)
-# fontsize: 10pt                       # size for print version, this is scaled by 120% in HTML
-
 # HTML (defaults commented out)
 # html:
-#   fontsize: 12pt
-#   mainfont: \'Noto Sans\', sans-serif
-#   maxwidth: 45em                       # max width of body text
-#   fontcolor: '#1a1a1a'
-#   backgroundcolor: '#fdfdfd'
-#   linkcolor: '#0000ff'
-#   margin-left: 50px
-#   margin-right: 50px
-#   margin-top: 50px
-#   margin-bottom: 50px
-#   monofont: \'Noto Sans Mono\', monospace
-#   monobackgroundcolor:
+  # fontsize: 12pt
+  # mainfont: \'Noto Sans\', sans-serif
+  # maxwidth: 45em                       # max width of body text
+  # fontcolor: '#1a1a1a'
+  # backgroundcolor: '#fdfdfd'
+  # linkcolor: '#0000ff'
+  # margin-left: 50px
+  # margin-right: 50px
+  # margin-top: 50px
+  # margin-bottom: 50px
+  # monofont: \'Noto Sans Mono\', monospace
+  # monobackgroundcolor:
 
 # LaTeX (defaults commented out)
 # latex:
-#   fontsize: 10pt
-#   fontfamily: noto
-#   fontfamilyoptions: sfdefault
-#   fontenc: T1
-#   babelfonts:
-#   papersize: a4
-#   classoptions:
-#   geometryoptions: 
-#     - margin=3cm
-#   pagestyle: fancy
-#   secnumdepth: 5                       # depth of numbering if numbering sections
-#   boxlinks: 
-#   colorlinks:
-#   linkcolor: blue
-#   filecolor: blue
-#   citecolor: blue
-#   urlcolor: blue
-#   toccolor:
-#   links-as-notes:                      # links in footnotes, doesn't work currently
-#   urlstyle:
-#   hyperrefoptions:
-#   indent:                              # indent paragraphs instead of vertical space
-#   block-headings:
-#   biblatexoptions:
-#   natbiboptions:
-#   biblio-style:
-#   microtypeoptions:
+  # fontsize: 10pt
+  # fontfamily: noto
+  # fontfamilyoptions: sfdefault
+  # fontenc: T1
+  # babelfonts:
+  # papersize: a4
+  # classoptions:
+  # geometryoptions: 
+  #   - margin=3cm
+  # pagestyle: fancy
+  # secnumdepth: 5                       # depth of numbering if numbering sections
+  # linkcolor:
+  #   model: named                       # color model, e.g. named, RGB, HTML, etc. (see xcolor package)
+  #   spec: Blue                         # color specification, e.g. Blue, '0, 0, 255', 0000ff etc.
+  # hidelinks:                           # hide links in the document (no colors or borders)
+  # links-as-notes:                      # links in footnotes, doesn't work currently
+  # urlstyle:
+  # hyperrefoptions:
+  # indent:                              # indent paragraphs instead of vertical space
+  # block-headings:
+  # biblatexoptions:
+  # natbiboptions:
+  # biblio-style:
+  # microtypeoptions:
 
   # XeTeX/LuaTeX specific (defaults commented out)
   # mainfont:
