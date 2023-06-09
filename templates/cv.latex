@@ -23,7 +23,7 @@ $endfor$
 \else % if luatex or xetex
 $if(latex.mathspec)$
   \ifXeTeX
-    \usepackage{latex.mathspec} % this also loads fontspec
+    \usepackage{mathspec} % this also loads fontspec
   \else
     \usepackage{unicode-math} % this also loads fontspec
   \fi
@@ -33,15 +33,13 @@ $endif$
   \defaultfontfeatures{Scale=MatchLowercase}$-- must come before Beamer theme
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-$if(latex.fontfamily)$
-$else$
-$-- Set default font
-\usepackage[sfdefault]{noto}
-$endif$
 
 $-- User font settings
 $if(latex.fontfamily)$
 \usepackage[$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$]{$latex.fontfamily$}
+$else$
+$-- Set default font
+\usepackage{notomath}
 $endif$
 \ifPDFTeX\else
   % xetex/luatex font selection

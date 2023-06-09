@@ -1,5 +1,8 @@
 $if(document-css)$
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Mono:wght@400;700&display=swap');
 html {
   font-family: $if(html.mainfont)$$html.mainfont$$else$'Noto Sans', sans-serif$endif$;
   font-size: $if(html.fontsize)$$html.fontsize$$else$12pt$endif$;
@@ -116,7 +119,7 @@ div.abstract-title {
 }
 $endif$
 code {
-  font-family: $if(html.monofont)$$html.monofont$$else$'Noto Sans Mono', monospace$endif$;
+  font-family: $if(html.monofont)$$html.monofont$$else$'Noto Serif Mono', monospace$endif$;
 $if(html.monobackgroundcolor)$
   background-color: $html.monobackgroundcolor$;
   padding: .1em .3em;
