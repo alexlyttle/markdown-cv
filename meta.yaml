@@ -6,8 +6,9 @@ author: Firstname Lastname
 date: '2023-06-05'
 location: City, Country
 phone: '+44 1234 567 890'  # be careful sharing this online
-email: local@domain.com  # be careful sharing this online
+email: local@domain.com    # be careful sharing this online
 website: domain.com
+lang: en-GB
 
 # SUMMARY (example)
 # abstract-title: Summary
@@ -31,16 +32,15 @@ website: domain.com
   # margin-right: 50px
   # margin-top: 50px
   # margin-bottom: 50px
-  # monofont: \'Noto Sans Mono\', monospace
+  # monofont: \'Noto Serif Mono\', monospace
   # monobackgroundcolor:
 
 # LaTeX (defaults commented out)
 # latex:
   # fontsize: 10pt
-  # fontfamily: noto
-  # fontfamilyoptions: sfdefault
+  # fontfamily: notomath                 # global font family package name (see https://tug.org/FontCatalogue/)
+  # fontfamilyoptions:                   # font family options (e.g. sfdefault for sans-serif)
   # fontenc: T1
-  # babelfonts:
   # papersize: a4
   # classoptions:
   # geometryoptions: 
@@ -52,7 +52,7 @@ website: domain.com
   #   spec: Blue                         # color specification, e.g. Blue, '0, 0, 255', 0000ff etc.
   # hidelinks:                           # hide links in the document (no colors or borders)
   # links-as-notes:                      # links in footnotes, doesn't work currently
-  # urlstyle:
+  # urlstyle: same
   # hyperrefoptions:
   # indent:                              # indent paragraphs instead of vertical space
   # block-headings:
@@ -61,7 +61,7 @@ website: domain.com
   # biblio-style:
   # microtypeoptions:
 
-  # XeTeX/LuaTeX specific (defaults commented out)
+  # XeLaTeX/LuaLaTeX specific - not yet tested (defaults commented out)
   # mainfont:
   # sansfont:
   # monofont:
@@ -79,4 +79,5 @@ website: domain.com
   # CJKmonofont:
   # CJKoptions:
   # mathspec:
+  # babelfonts:
 ---
