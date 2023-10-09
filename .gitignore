@@ -3,3 +3,4 @@
 *.docx
 !templates/cv.html
 !images/*.pdf
+.DS_Store
