@@ -1,4 +1,3 @@
-# pdf-engine: xelatex
 filters: 
   - extensions/multibib/multibib.lua
 citeproc: true  # process citations
