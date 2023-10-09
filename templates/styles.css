@@ -79,14 +79,14 @@ h2 {
 h3 {
   font-size: 1.2em;
 }
-h4 {
-  font-size: 1.0em;
-}
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.4em;
+  color: #1a1a1a;
+}
+h4, h5, h6 {
+  font-size: 1em;
 }
 h5, h6 {
-  font-size: 1em;
   font-style: italic;
 }
 h6 {
@@ -119,7 +119,7 @@ div.abstract-title {
 }
 $endif$
 code {
-  font-family: $if(html.monofont)$$html.monofont$$else$'Noto Serif Mono', monospace$endif$;
+  font-family: $if(html.monofont)$$html.monofont$$else$'Noto Sans Mono', monospace$endif$;
 $if(html.monobackgroundcolor)$
   background-color: $html.monobackgroundcolor$;
   padding: .1em .3em;

@@ -35,12 +35,9 @@ $endif$
 \fi
 
 $-- User font settings
-$if(latex.fontfamily)$
-\usepackage[$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$]{$latex.fontfamily$}
-$else$
-$-- Set default font
-\usepackage{notomath}
-$endif$
+\usepackage[%
+  $if(latex.fontfamilyoptions)$$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$$else$sfdefault$endif$]{%
+  $if(latex.fontfamily)$$latex.fontfamily$$else$noto$endif$}
 \ifPDFTeX\else
   % xetex/luatex font selection
 $if(latex.mainfont)$
@@ -142,7 +139,7 @@ $endif$
   $if(latex.geometryoptions)$
   $for(latex.geometryoptions)$$latex.geometryoptions$$sep$,$endfor$
   $else$
-  margin=3cm,
+  margin=1in,
   $endif$
 ]{geometry}
 
@@ -357,20 +354,23 @@ $endif$
 \graphicspath{{./images/}}
 $if(location)$
 \newcommand{\location}[1]{%
-  \includegraphics[align=c,height=1em]{location.pdf} $location$}
+  \faMapMarker~$location$}
 $endif$
 $if(phone)$
 \newcommand{\phone}[1]{%
-  \href{tel:#1}{\includegraphics[align=c,height=1em]{call.pdf} $phone$}}
+  \faPhone~\href{tel:#1}{$phone$}}
 $endif$
 $if(email)$
 \newcommand{\email}[1]{%
-  \href{mailto:#1}{\includegraphics[align=c,height=1em]{mail.pdf} $email$}}
+  \faEnvelope~\href{mailto:#1}{$email$}}
 $endif$
 $if(website)$
 \newcommand{\website}[1]{%
-  \href{https://#1}{\includegraphics[align=c,height=1em]{home.pdf} $website$}}
+  \faHome~\href{https://#1}{$website$}}
 $endif$
+
+%% OTHER
+\usepackage{fontawesome}
 
 %% TITLE
 \makeatletter
@@ -419,7 +419,6 @@ $endif$
 \makeatother
 
 \begin{document}
-% \setstretch{$if(linestretch)$$linestretch$$else$1.2$endif$}
 
 $if(has-frontmatter)$
 \frontmatter

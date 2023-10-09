@@ -16,9 +16,13 @@ lang: en-GB
 #   Here is a summary of my research interests and experience.
 
 # BIBLIOGRAPHY (example; use --citeproc with pandoc to process citations)
-# bibliography: citations.bib
+bibliography:
+  refereed: publications/refereed.bib
+  conference: publications/conference.bib
+csl: cv.csl  # citation style language file
 # link-citations: true
-# reference-section-title: Bibliography
+nocite: |
+  @*
 
 # HTML (defaults commented out)
 # html:
@@ -32,19 +36,19 @@ lang: en-GB
   # margin-right: 50px
   # margin-top: 50px
   # margin-bottom: 50px
-  # monofont: \'Noto Serif Mono\', monospace
+  # monofont: \'Noto Sans Mono\', monospace
   # monobackgroundcolor:
 
 # LaTeX (defaults commented out)
 # latex:
   # fontsize: 10pt
-  # fontfamily: notomath                 # global font family package name (see https://tug.org/FontCatalogue/)
-  # fontfamilyoptions:                   # font family options (e.g. sfdefault for sans-serif)
+  # fontfamily: noto                     # global font family package name (see https://tug.org/FontCatalogue/)
+  # fontfamilyoptions: sfdefault         # font family options (e.g. sfdefault for sans-serif)
   # fontenc: T1
   # papersize: a4
   # classoptions:
   # geometryoptions: 
-  #   - margin=3cm
+  #   - margin=1in
   # pagestyle: fancy
   # secnumdepth: 5                       # depth of numbering if numbering sections
   # linkcolor:

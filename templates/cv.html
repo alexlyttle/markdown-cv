@@ -32,6 +32,7 @@ $if(mathjax)$
 $endif$
   $math$
 $endif$
+  <script src="https://kit.fontawesome.com/dffcf90fc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 $for(include-before)$
@@ -44,16 +45,16 @@ $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
 $if(location)$
-<p class="location"><img class="icon" src="images/location.svg" alt="location icon"> $location$</p>
+<p><i class="fa fa-map-marker"></i> $location$</p>
 $endif$
 $if(phone)$
-<a class="phone" href="tel:$phone$"><img class="icon" src="images/call.svg" alt="phone icon"> $phone$</a>
+<p><i class="fa fa-phone"></i> <a href="tel:$phone$">$phone$</a></p>
 $endif$
 $if(email)$
-<a class="email" href="mailto:$email[@]$"><img class="icon" src="images/mail.svg" alt="email icon"> $email[@]$</a>
+<p><i class="fa fa-envelope"></i> <a href="mailto:$email[@]$">$email[@]$</a></p>
 $endif$
 $if(website)$
-<a class="website" href="https://$website$"><img class="icon" src="images/home.svg" alt="website icon"> $website$</a>
+<p><i class="fa fa-home"></i> <a href="https://$website$">$website$</a></p>
 $endif$
 $if(abstract)$
 <div class="abstract">
