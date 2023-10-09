@@ -1,8 +1,6 @@
 # pdf-engine: xelatex
 filters: 
-  - extensions/multibib/multibib.lua 
-  - extensions/color-text.lua
-  # - extensions/highlight-author.lua  # currently broken!
+  - extensions/multibib/multibib.lua
 citeproc: true  # process citations
 metadata-files:
   - meta.yaml
