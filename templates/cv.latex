@@ -358,15 +358,15 @@ $if(location)$
 $endif$
 $if(phone)$
 \newcommand{\phone}[1]{%
-  \faPhone~\href{tel:#1}{$phone$}}
+  \faPhone~\href{tel:$phone$}{$phone$}}
 $endif$
 $if(email)$
 \newcommand{\email}[1]{%
-  \faEnvelope~\href{mailto:#1}{$email$}}
+  \faEnvelope~\href{mailto:$email$}{$email$}}
 $endif$
 $if(website)$
 \newcommand{\website}[1]{%
-  \faHome~\href{https://#1}{$website$}}
+  \faHome~\href{https://$website$}{$website$}}
 $endif$
 
 %% OTHER
