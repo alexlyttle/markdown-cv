@@ -1,0 +1,4 @@
+[submodule "extensions/multibib"]
+	path = extensions/multibib
+	url = https://github.com/pandoc-ext/multibib
+	branch = main
