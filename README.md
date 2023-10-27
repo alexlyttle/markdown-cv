@@ -12,7 +12,7 @@ This uses pandoc to produce `main.pdf` and `main.html` with default options conf
 
 # Configuration
 
-## Metadata
+## Document Metadata
 
 Use the `meta.yaml` file to configure your CV and personal details. Here we list the defaults.
 
@@ -105,7 +105,7 @@ latex:
   microtypeoptions:
 ```
 
-## Default
+## Pandoc Defaults
 
 The `defaults.yaml` file configures default options for the `pandoc` command.
 
@@ -116,6 +116,58 @@ citeproc: true  # process citations
 metadata-files:
   - meta.yaml
 pdf-engine: pdflatex  # changing to xelatex or lualatex not tested
+```
+
+## Update Publications
+
+You can use `scripts/update_pubs.py` to update the publication lists. This outputs the `.bib` files in the `publications` directory and the `metrics.json` file in the `data` directory. This can be configured at the top of the file.
+
+### Constants
+
+```python
+# Set constants
+QUERY = {
+    # "orcid": "0000-0000-0000-0000",  # set this to your ORCID
+    "author": "Payne-Gaposchkin, Cecilia",  # set this to your name
+}
+SORT = "citation_count"  # sort by citation count
+ROWS = 25  # max. number of rows to return from ADS query
+```
+
+### File Paths
+
+```python
+# File paths
+ABBR_PATH = "data/aas_macros.json"  # path to AAS macros
+PUB_DIR = "publications"  # path to publication directory
+DATA_DIR = "data"  # path to data directory
+METRICS_FILE = "metrics.json"  # path to metrics file output
+```
+
+### Document Types
+
+This dictionary controls the name of each `.bib` file and the document types which will be saved to them.
+
+```python
+# Set publication categories
+# The following relates the category to the ADS doctypes
+DOCTYPE = {
+    "refereed": ["article"],
+    "conference": ["inproceedings"],
+}
+```
+
+### Bibtex Parsing
+
+Some errors may be thrown if the bibtex file is not parsed by `pandoc`. You can set strings to be replaced before the file is saved using the following `dict`.
+
+```python
+# Set bibtex replacements
+# These are items that may not be parsed correctly by the ADS API
+# The key is the old string, the value is the new string
+BIBTEX_REPLACEMENTS = {
+    "\\'\\i": "\\'i",
+}
 ```
 
 # Credits
