@@ -1,6 +1,7 @@
 filters: 
   - filters/multibib.lua
   - filters/ads-metrics.lua
+  - filters/highlight-authors.lua
 citeproc: true  # process citations
 metadata-files:
   - meta.yaml

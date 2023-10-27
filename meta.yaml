@@ -18,6 +18,14 @@ lang: en-GB
 # ADS metrics
 metrics: data/metrics.json
 
+# Highlight the following authors in the bibliography
+highlightauthors:
+  - Payne, C.
+  - Payne, C. H.
+  - Payne-Gaposchkin, C.
+  - Payne-Gaposchkin, C. H.
+# highlighttype: bold  # choose from bold (default), italic, underline, or smallcaps
+
 # BIBLIOGRAPHY (example; use --citeproc with pandoc to process citations)
 bibliography:
   refereed: publications/refereed.bib

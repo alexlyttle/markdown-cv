@@ -42,7 +42,7 @@ local highlight_author_filter = {
         for i, a in ipairs(author) do
           -- This assumes name has only string and space. Check other types of elements
           if not (
-            (elem.content[k+i-1].t == "Str" and a.t == "Str" and elem.content[k+i-1].text:find(a.text)) 
+            (elem.content[k+i-1].t == "Str" and a.t == "Str" and elem.content[k+i-1].text:find(a.text, 1, true)) 
             or (elem.content[k+i-1].t == "Space" and a.t == "Space")
           ) then break end
           n = i
