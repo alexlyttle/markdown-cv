@@ -15,6 +15,9 @@ lang: en-GB
 # abstract: |
 #   Here is a summary of my research interests and experience.
 
+# ADS metrics
+metrics: data/metrics.json
+
 # BIBLIOGRAPHY (example; use --citeproc with pandoc to process citations)
 bibliography:
   refereed: publications/refereed.bib
