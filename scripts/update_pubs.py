@@ -25,7 +25,8 @@ import os, json, ads
 # Set constants
 QUERY = {
     # "orcid": "0000-0000-0000-0000",  # set this to your ORCID
-    "author": "Payne-Gaposchkin, Cecilia",  # set this to your name
+    "author": "Payne-Gaposchkin, Cecilia",  # set this to your name if needed
+    "q": "year:1923-1980",  # set this to any additional query details
 }
 SORT = "citation_count"  # choose what to sort by
 ROWS = 25  # max. number of rows to return from ADS query
