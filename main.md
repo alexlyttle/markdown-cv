@@ -41,14 +41,13 @@ Here are a selection of publications by Celia Payne-Gaposchkin as an example.
 
 You can use the `ads-metrics` filter to pull metrics from the JSON file provided by the NASA ADS database. You can specify statistics for all results: 
 
-Total papers: {{papers}}; total citations {{citations}}; total citing papers: {{citing_papers}}; h-index: {{h_index}}; reads: {{reads}}; downloads {{downloads}}.
+Total papers: {{papers}}; total citations {{citations}}; total citing papers: {{citing_papers}}; h-index: {{h_index}}; reads: {{reads}}; downloads {{downloads}}.[^1]
+
+[^1]: Provided by the SAO/NASA Astrophysics Data System
 
 Or just from refereed sources: 
 
 Total papers: {{papers_ref}}; total citations {{citations_ref}}; total citing papers: {{citing_papers_ref}}; h-index: {{h_index_ref}}; reads: {{reads_ref}}; downloads {{downloads_ref}}.
-[^1]
-
-[^1]: Provided by the SAO/NASA Astrophysics Data System
 
 ## Refereed
 
