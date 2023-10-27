@@ -28,13 +28,14 @@ local fields = {
     downloads = {"basic stats", "total number of downloads"},
     citing_papers = {"citation stats", "number of citing papers"},
     citations = {"citation stats", "total number of citations"},
-    h_index = {"indicators", "h"}
+    h_index = {"indicators", "h"},
+    papers_ref = {"basic stats refereed", "number of papers"},
+    reads_ref = {"basic stats refereed", "total number of reads"},
+    downloads_ref = {"basic stats refereed", "total number of downloads"},
+    citing_papers_ref = {"citation stats refereed", "number of citing papers"},
+    citations_ref = {"citation stats refereed", "total number of citations"},
+    h_index_ref = {"indicators refereed", "h"}
 }
-
--- Add fields from refereed sources
-for key, value in pairs(fields) do
-    fields[key .. "_ref"] = {value[1] .. " refereed", value[2]}
-end
 
 -- Read file content
 local function read_file(filename)
@@ -46,7 +47,7 @@ local function read_file(filename)
 end
 
 -- Get metrics from file
-function get_metrics(meta)
+local function get_metrics(meta)
     if meta["metrics"] == nil then return end
     -- This is an Inlines so get the first element
     local filename = meta["metrics"][1].text
@@ -65,11 +66,12 @@ function get_metrics(meta)
 end
 
 -- Replace metrics in text
-function replace_metrics(elem)
+local function replace_metrics(elem)
     for key, value in pairs(metrics) do
-        if string.find(elem.text, "{{" .. key .. "}}") then
+        local pattern = "{{" .. key .. "}}"
+        if string.find(elem.text, pattern, 1, true) then
             -- Substitute value in place of key in text
-            return pandoc.Str(string.gsub(elem.text, "{{" .. key .. "}}", value))
+            elem = pandoc.Str(string.gsub(elem.text, pattern, value))
         end
     end
     return elem
