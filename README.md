@@ -129,6 +129,7 @@ You can use `scripts/update_pubs.py` to update the publication lists. This outpu
 QUERY = {
     # "orcid": "0000-0000-0000-0000",  # set this to your ORCID
     "author": "Payne-Gaposchkin, Cecilia",  # set this to your name
+    "q": "year:1923-1980",  # set this to any additional query details
 }
 SORT = "citation_count"  # sort by citation count
 ROWS = 25  # max. number of rows to return from ADS query
