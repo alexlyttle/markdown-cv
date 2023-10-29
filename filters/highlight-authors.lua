@@ -34,7 +34,7 @@ local highlight_types = {
 
 local highlight_author_filter = {
   Para = function(elem)
-    if not elem.t == "Para" then return elem end
+    if elem.t ~= "Para" then return elem end
     for _, author in ipairs(authors) do
       for k, _ in ipairs(elem.content) do
         local n = 0
@@ -73,7 +73,7 @@ end
 
 local function get_meta(meta)
   authors = meta["highlightauthors"] or authors
-  if not authors == nil then
+  if authors ~= nil then
     table.sort(authors, compare_lists)
   end
   local highlight_type = meta["highlighttype"]
