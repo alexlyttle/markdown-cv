@@ -66,8 +66,16 @@ local highlight_author_filter = {
   end
 }
 
+local function compare_lists(a, b)
+  -- Function to compare the length of authors
+  return #a > #b
+end
+
 local function get_meta(meta)
   authors = meta["highlightauthors"] or authors
+  if not authors == nil then
+    table.sort(authors, compare_lists)
+  end
   local highlight_type = meta["highlighttype"]
   if highlight_type and highlight_type[1].t == "Str" then
     -- If the specified highlight type is a string then attempt to find equivalent pandoc type
