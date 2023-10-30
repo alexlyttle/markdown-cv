@@ -120,22 +120,35 @@ pdf-engine: pdflatex  # changing to xelatex or lualatex not tested
 
 ## Update Publications
 
-You can use `scripts/update_pubs.py` to update the publication lists. This outputs the `.bib` files in the `publications` directory and the `metrics.json` file in the `data` directory. This can be configured at the top of the file.
+You can use `update_pubs.py` to update the publication lists. This outputs the `.bib` files in the `publications` directory and the `metrics.json` file in the `data` directory.
 
-### Constants
+The script requires Python 3.7 or above and the NASA ADS Python API. Go [here](https://ads.readthedocs.io/en/latest/#getting-started) for instructions on installing the ADS Python package and acquiring a NASA ADS API token.
+
+Edit the variables at the top of `update_pubs.py` (see below) then run the script:
+
+```bash
+python update_pubs.py
+```
+
+### Query
+
+Set arguments for the search query. If you have an up-to-date ORCID then this is the easiest way to ensure the search results match your publications. Otherwise, specify your name and additional details to find your papers. This example is for the famous astronomer Cecilia Payne-Gaposchkin:
 
 ```python
-# Set constants
 QUERY = {
     # "orcid": "0000-0000-0000-0000",  # set this to your ORCID
-    "author": "Payne-Gaposchkin, Cecilia",  # set this to your name
+    "author": "Payne-Gaposchkin, Cecilia, H.",  # set this to your name
     "q": "year:1923-1980",  # set this to any additional query details
 }
 SORT = "citation_count"  # sort by citation count
 ROWS = 25  # max. number of rows to return from ADS query
 ```
 
+Here we sort by citation count then choose the first 25 rows of the search result.
+
 ### File Paths
+
+If you wish to export files elsewhere then change these variables.
 
 ```python
 # File paths
