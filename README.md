@@ -8,9 +8,7 @@ To compile, run the `Makefile`,
 make clean; make
 ```
 
-This uses pandoc to produce `main.pdf` and `main.html` with default options configured in `defaults.yaml`.
-
-# Configuration
+This uses pandoc to produce `main.pdf` and `main.html` with default pandoc options configured in `defaults.yaml`.
 
 ## Document Metadata
 
@@ -18,21 +16,23 @@ Use the `meta.yaml` file to configure your CV and personal details. Here we list
 
 ### Personal Information
 
+Here are some example personal details. As with all personal information, consider what you are comfortable sharing online if your CV is public.
+
 ```yaml
 title: Firstname M. Lastname, PhD
 subtitle: Postdoctoral Research Fellow
 author: Firstname Lastname
 date: '2023-06-05'
 location: City, Country
-phone: '+44 1234 567 890'  # be careful sharing this online
-email: local@domain.com    # be careful sharing this online
+phone: '+44 1234 567 890'
+email: local@domain.com
 website: domain.com
 lang: en-GB
 ```
 
 ### Publications
 
-Default options for the bibliography using the `multibib` filter. You can specify as many `.bib` files as you like. These can then be printed by putting in your markdown file, e.g.
+Default options for the bibliography using the `filters/multibib.lua` filter. You can specify as many `.bib` files as you like. These can then be printed by putting in your markdown file, e.g.
 
 ```markdown
 ::: {#refs-refereed}
@@ -51,7 +51,69 @@ nocite: |
   @*
 ```
 
-The `nocite` option lists citation keys for papers you wish to print in the bibliography without citing in text. For a CV, you may want to cite everything.
+The `nocite` option lists citation keys for papers you wish to print in the bibliography without citing in text. To cite all entries, use `@*`. Otherwise, list the citation keys for the entries you want to appear in the bibliography.
+
+If you do not want to split bibliographies, you can just pass one file. For example,
+
+```yaml
+bibliography: publications/refereed.bib
+```
+
+Then, place the bibliography in `main.md` like so:
+
+```markdown
+::: {#refs}
+:::
+```
+
+### Highlight Authors
+
+The `filters/highlight-authors.lua` filter lets you specify author names to highlight as they appear in the bibliography. You can list the authors with the `highlightauthors` option. By default, the authors listed are made bold. You can change this with the `highlighttype` option.
+
+For example, we want to highlight Celia Payne-Gaposchkin. We list all ways we expect this name to appear in the bibliography.
+
+```yaml
+# Highlight the following authors in the bibliography
+highlightauthors:
+  - Payne, C.
+  - Payne, C. H.
+  - Payne-Gaposchkin, C.
+  - Payne-Gaposchkin, C. H.
+# highlighttype: bold  # choose from bold (default), italic, underline, or smallcaps
+```
+
+### Publication Metrics
+
+The `filters/ads-metrics.lua` filter lets you specify a `json` file from the NASA ADS Metrics API. You can request this file using the `update_pubs.py` script (see [below](#update-publications)). Then, you can use the following placeholders in `main.md` to reference particular metrics.
+
+Specify the path to the `json` file using the `metrics` option. For example,
+
+```yaml
+# ADS metrics
+metrics: data/metrics.json
+```
+
+Here is an example of referencing the metrics in text:
+
+```markdown
+Total papers: {{papers}}; total citations {{citations}}; total citing papers: {{citing_papers}}; h-index: {{h_index}}; reads: {{reads}}; downloads {{downloads}}.
+```
+
+It will render something like this:
+
+> Total papers: 25; total citations 823; total citing papers: 781; h-index: 17; reads: 12874; downloads 6086.
+
+The numbers are pulled from `data/metrics.json`.
+
+For each metric, you can add `_ref` to get the corresponding metric considering only refereed sources. For example:
+
+```markdown
+Total refereed papers: {{papers_ref}}
+```
+
+Renders as:
+
+> Total refereed papers: 15
 
 ### HTML
 
