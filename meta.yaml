@@ -5,8 +5,8 @@ subtitle: Postdoctoral Research Fellow
 author: Firstname Lastname
 date: '2023-06-05'
 location: City, Country
-phone: '+44 1234 567 890'  # be careful sharing this online
-email: local@domain.com    # be careful sharing this online
+phone: '+44 1234 567 890'
+email: local@domain.com
 website: domain.com
 lang: en-GB
 
@@ -14,17 +14,6 @@ lang: en-GB
 # abstract-title: Summary
 # abstract: |
 #   Here is a summary of my research interests and experience.
-
-# ADS metrics
-metrics: data/metrics.json
-
-# Highlight the following authors in the bibliography
-highlightauthors:
-  - Payne, C.
-  - Payne, C. H.
-  - Payne-Gaposchkin, C.
-  - Payne-Gaposchkin, C. H.
-# highlighttype: bold  # choose from bold (default), italic, underline, or smallcaps
 
 # BIBLIOGRAPHY (example; use --citeproc with pandoc to process citations)
 bibliography:
@@ -34,6 +23,17 @@ csl: cv.csl  # citation style language file
 # link-citations: true
 nocite: |
   @*
+
+# Highlight the following authors in the bibliography
+highlightauthors:
+  - Payne, C.
+  - Payne, C. H.
+  - Payne-Gaposchkin, C.
+  - Payne-Gaposchkin, C. H.
+# highlighttype: bold  # choose from bold (default), italic, underline, or smallcaps
+
+# ADS metrics
+metrics: data/metrics.json
 
 # HTML (defaults commented out)
 # html:
