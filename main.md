@@ -5,7 +5,6 @@ Astronomy, University of City, Country
 
 - Subject of Thesis: A Theory of the Universe
 - Supervisor: Dr J. Bloggs
-- Grade: Pass
 - Brief description
 
 **Master of Science (MSci)** --- Jun 2016 @ School of Physics and Astronomy,
