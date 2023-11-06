@@ -225,7 +225,6 @@ $if(latex.block-headings)$
 \fi
 $endif$
 \usepackage{fancyhdr}
-\pagestyle{$if(latex.pagestyle)$$latex.pagestyle$$else$fancy$endif$}
 
 $if(csl-refs)$
 \newlength{\cslhangindent}
@@ -427,6 +426,8 @@ $endif$
   \fancyhf{}
   \fancyfoot[R]{\small Page \thepage}
   \renewcommand{\headrulewidth}{0pt}}
+
+\pagestyle{$if(latex.pagestyle)$$latex.pagestyle$$else$fancy$endif$}
 
 \begin{document}
 
