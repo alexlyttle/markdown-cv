@@ -423,6 +423,11 @@ $endif$
 \fancyfoot[R]{\small Page \thepage}
 \makeatother
 
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[R]{\small Page \thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
 \begin{document}
 
 $if(has-frontmatter)$
