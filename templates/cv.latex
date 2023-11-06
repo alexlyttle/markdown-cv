@@ -35,9 +35,14 @@ $endif$
 \fi
 
 $-- User font settings
+$if(latex.fontfamily)$
 \usepackage[%
-  $if(latex.fontfamilyoptions)$$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$$else$sfdefault$endif$]{%
-  $if(latex.fontfamily)$$latex.fontfamily$$else$noto$endif$}
+  $if(latex.fontfamilyoptions)$$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$$endif$]{%
+  $latex.fontfamily$}
+$else$
+\usepackage[%
+  $if(latex.fontfamilyoptions)$$for(latex.fontfamilyoptions)$$latex.fontfamilyoptions$$sep$,$endfor$$else$sfdefault$endif$]{noto}
+$endif$
 \ifPDFTeX\else
   % xetex/luatex font selection
 $if(latex.mainfont)$
